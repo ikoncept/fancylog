@@ -10,7 +10,7 @@ $ yarn add @ikoncept/fancylog
 
 ## Usage
 ```js
-import FancyLog from '../src'
+import FancyLog from '@ikoncept/fancylog'
 
 const fancylog = new FancyLog()
 fancylog.log('log', 'Basic log')

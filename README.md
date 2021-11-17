@@ -1,10 +1,9 @@
 # FancyLog.js
-FancyLog is a silly, but fun logging utility for browser `console.log()`. Simply put, it makes badges in the console. 
+FancyLog is a silly, but fun logging utility for browser `console.log()`. Simply put, it makes badges in the console. <a href="https://unpkg.com/@ikoncept/fancylog@latest/dist/demo/index.html" target="_blank">Click here for demo</a>
 
 <img src="screenshot.png" width="320">
 
-## Demo
-https://unpkg.com/@ikoncept/fancylog@latest/dist/demo/index.html
+
 
 ## Installation
 ```sh

@@ -1,12 +1,11 @@
 import merge from 'lodash.merge'
 
 export default class FancyLog {
-
-    constructor(options = {}){
+    constructor (options = {}) {
         this.loggers = merge(this.defaults, options)
     }
 
-    get defaults(){
+    get defaults () {
         return {
             'default': {
                 'background': '#eee',
@@ -37,12 +36,12 @@ export default class FancyLog {
                 'text': '#fff',
                 'badgeBackground': '#35495e',
                 'badgeText': '#fff'
-            },
+            }
         }
     }
 
-    print (title = "", message = "", tailArguments = null, logger = null) {
-        if(!logger){
+    print (title = '', message = '', tailArguments = null, logger = null) {
+        if (!logger) {
             logger = this.loggers.default
         }
 
@@ -59,7 +58,7 @@ export default class FancyLog {
     }
 
     log (title, message, ...args) {
-        this.print(title, message, args, this.loggers.default)
+        this.print(title, message, args)
     }
 
     info (title, message, ...args) {
@@ -77,5 +76,4 @@ export default class FancyLog {
     error (title, message, ...args) {
         this.print(title, message, args, this.loggers.error)
     }
-    
 }

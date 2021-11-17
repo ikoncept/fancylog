@@ -1993,42 +1993,55 @@
 	module.exports = merge;
 	});
 
-	const defaults = {
-	    'default': {
-	        'background': '#eee',
-	        'text': '#222'
-	    },
-	    'error': {
-	        'background': '#F87171',
-	        'text': '#fff'
-	    },
-	    'warn': {
-	        'background': '#FBBF24',
-	        'text': '#fff'
-	    },
-	    'success': {
-	        'background': '#34D399',
-	        'text': '#fff'
-	    },
-	    'info': {
-	        'background': '#60A5FA',
-	        'text': '#fff'
-	    },
-	};
-
 	class FancyLog {
-
-	    constructor(options = {}){
-	        let settings = lodash_merge(defaults, options);
-
-	        console.log(settings);
+	    constructor (options = {}) {
+	        this.loggers = lodash_merge(this.defaults, options);
 	    }
 
-	    log (title, message, tailArguments = null, color = '#eee', text = '#222') {
+	    get defaults () {
+	        return {
+	            'default': {
+	                'background': '#eee',
+	                'text': '#222',
+	                'badgeBackground': '#35495e',
+	                'badgeText': '#fff'
+	            },
+	            'error': {
+	                'background': '#F87171',
+	                'text': '#fff',
+	                'badgeBackground': '#35495e',
+	                'badgeText': '#fff'
+	            },
+	            'warn': {
+	                'background': '#FBBF24',
+	                'text': '#fff',
+	                'badgeBackground': '#35495e',
+	                'badgeText': '#fff'
+	            },
+	            'success': {
+	                'background': '#34D399',
+	                'text': '#fff',
+	                'badgeBackground': '#35495e',
+	                'badgeText': '#fff'
+	            },
+	            'info': {
+	                'background': '#60A5FA',
+	                'text': '#fff',
+	                'badgeBackground': '#35495e',
+	                'badgeText': '#fff'
+	            }
+	        }
+	    }
+
+	    print (title = '', message = '', tailArguments = null, logger = null) {
+	        if (!logger) {
+	            logger = this.loggers.default;
+	        }
+
 	        console.log(
 	            `%c ${title} %c ${message} %c`,
-	            `background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff`,
-	            `background:${color} ; padding: 1px; border-radius: 0 3px 3px 0;  color: ${text}`,
+	            `background:${logger.badgeBackground} ; padding: 1px; border-radius: 3px 0 0 3px;  color: ${logger.badgeText}`,
+	            `background:${logger.background} ; padding: 1px; border-radius: 0 3px 3px 0;  color: ${logger.text}`,
 	            `background:transparent`
 	        );
 
@@ -2037,22 +2050,25 @@
 	        }
 	    }
 
+	    log (title, message, ...args) {
+	        this.print(title, message, args, this.loggers.default);
+	    }
+
 	    info (title, message, ...args) {
-	        this.log(title, message, args, '#60afea', '#fff');
+	        this.print(title, message, args, this.loggers.info);
 	    }
 
 	    warn (title, message, ...args) {
-	        this.log(title, message, args, '#e5ae25', '#fff');
+	        this.print(title, message, args, this.loggers.warn);
 	    }
 
 	    success (title, message, ...args) {
-	        this.log(title, message, args, '#2CAF69', '#fff');
+	        this.print(title, message, args, this.loggers.success);
 	    }
 
 	    error (title, message, ...args) {
-	        this.log(title, message, args, '#AF342C', '#fff');
+	        this.print(title, message, args, this.loggers.error);
 	    }
-	    
 	}
 
 	return FancyLog;

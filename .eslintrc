@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "parserOptions": {
+        "parser": "@babel/eslint-parser",
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "extends": [
+        "standard"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "vue/html-indent": [
+            "error",
+            4
+        ],
+        "multiline-ternary": [
+            "error",
+            "never"
+        ],
+        "eqeqeq": [
+            "error",
+            "always"
+        ]
+    },
+    "plugins": [
+        "@babel"
+    ]
+}

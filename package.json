@@ -1,0 +1,47 @@
+{
+  "name": "@ikoncept/fancylog",
+  "version": "1.0.0",
+  "description": "Console log in browser with extra fanciness",
+  "main": "fancylog.js",
+  "scripts": {
+    "serve": "parcel demo/index.html --port 5100",
+    "clean": "rm -rf .cache && rm -rf dist",
+    "build-demo": "parcel build demo/index.html --public-url . --out-dir dist/demo --out-file index.html",
+    "build-pkg": "rollup -c",
+    "build": "yarn clean && yarn build-demo && yarn build-pkg",
+    "lint": "eslint --fix --ext .js,.vue src/ --cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikoncept/fancylog.git"
+  },
+  "keywords": [
+    "console",
+    "fancy",
+    "logging",
+    "debug"
+  ],
+  "author": "Daniel Källstrand Modig <daniel@ikoncept.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ikoncept/fancylog/issues"
+  },
+  "homepage": "https://github.com/ikoncept/fancylog#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.0",
+    "@babel/eslint-plugin": "^7.14.5",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint": "^5.16.0",
+    "lodash.merge": "^4.6.2",
+    "parcel-bundler": "^1.12.4",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup": "^1.20.2"
+  }
+}

@@ -4,7 +4,7 @@ FancyLog is a silly, but fun logging utility for browser `console.log()`. Simply
 Example:
 
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.png | width=400)
 
 ## Installation
 ```sh

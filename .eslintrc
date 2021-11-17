@@ -13,10 +13,6 @@
             "error",
             4
         ],
-        "vue/html-indent": [
-            "error",
-            4
-        ],
         "multiline-ternary": [
             "error",
             "never"

@@ -26,6 +26,9 @@
   "bugs": {
     "url": "https://github.com/ikoncept/fancylog/issues"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "homepage": "https://github.com/ikoncept/fancylog#readme",
   "devDependencies": {
     "@babel/core": "^7.16.0",

@@ -3,6 +3,9 @@ FancyLog is a silly, but fun logging utility for browser `console.log()`. Simply
 
 <img src="screenshot.png" width="320">
 
+## Demo
+https://unpkg.com/@ikoncept/fancylog@1.0.2/dist/demo/index.html
+
 ## Installation
 ```sh
 $ yarn add @ikoncept/fancylog
